@@ -9,11 +9,13 @@ editor: visual
 
 ```{r libraries}
 #| output: false
+library(conflicted)
 library(fs)
 library(here)
 
 library(vroom)
 library(dplyr)
+conflicted::conflicts_prefer(dplyr::filter)
 library(stringr)
 library(purrr)
 library(forcats)
