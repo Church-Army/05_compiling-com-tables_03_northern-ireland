@@ -20,6 +20,7 @@ library(stringr)
 library(purrr)
 library(forcats)
 library(tidyr)
+library(snakecase)
 ```
 
 ## Read in data
@@ -229,6 +230,11 @@ all_data <-
 
 
 glimpse(all_data)
+
+str_to_nice_title <- function(x){
+  str_replace_all(x, "-", " ") |> 
+    to_title_case()
+}
 
 all_data <- 
   left_join(com, all_data, by = "com") |> 
