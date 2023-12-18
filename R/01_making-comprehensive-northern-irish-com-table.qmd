@@ -238,7 +238,7 @@ str_to_nice_title <- function(x){
 
 all_data <- 
   left_join(com, all_data, by = "com") |> 
-  mutate(nation_label = str_to_title(nation)) |> 
+  mutate(nation_label = str_to_nice_title(nation)) |> 
   relocate(nation_label, .after = nation)
 
 glimpse(all_data)
